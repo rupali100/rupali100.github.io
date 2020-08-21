@@ -7,7 +7,7 @@ body {
     font-weight: bold;
 }
 
-.yearTile{
+.col-3_yearTile{
 	background-color: white;
     width: 14rem;
     height: 25rem;
@@ -17,4 +17,11 @@ body {
 #filterId{
 	font-size: 1rem;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
 }
