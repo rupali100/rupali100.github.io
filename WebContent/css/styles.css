@@ -15,10 +15,11 @@ body {
 }
 
 .filterLable{
-	text-decoration: underline;
 	text-align: center;
-	text-underline-position: under;
 }
+
+.lineClass{
+	margin: auto;
 }
 
 #filterId{
