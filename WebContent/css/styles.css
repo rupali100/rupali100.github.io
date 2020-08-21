@@ -14,6 +14,13 @@ body {
     border-radius: 10px;	
 }
 
+.filterLable{
+	text-decoration: underline;
+	text-align: center;
+	text-underline-position: under;
+}
+}
+
 #filterId{
 	padding-left: 1rem;
 	font-size: 1rem;
