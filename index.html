@@ -1,11 +1,13 @@
 <html>  
 <head>  
-<script type="text/javascript" src="message.js"></script>  
+<script type="text/javascript" src="jquery.js"></script>  
+<script>
+	$(function(){
+    $("#includedContent").load("WebContent/view/spaceXView.html"); 
+  });
+</script>
 </head>  
 <body>  
-<p>Welcome to JavaScript</p>  
-<form>  
-<input type="button" value="click" onclick="msg()"/>  
-</form>  
+<div id="includedContent"></div>
 </body>  
 </html>  
