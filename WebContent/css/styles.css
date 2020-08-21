@@ -13,3 +13,8 @@ body {
     height: 25rem;
     border-radius: 10px;	
 }
+
+#filterId{
+	font-size: 1rem;
+    font-weight: bold;
+}
