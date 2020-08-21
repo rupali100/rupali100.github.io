@@ -6,3 +6,10 @@ body {
 	font-size: 1.5rem;
     font-weight: bold;
 }
+
+.yearTile{
+	background-color: white;
+    width: 14rem;
+    height: 25rem;
+    border-radius: 10px;	
+}
