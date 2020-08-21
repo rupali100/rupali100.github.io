@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html id="mes">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+	<link rel="stylesheet" href="./WebContent/lib/dhtmlxscheduler/dhtmlxscheduler.css" type="text/css" title="no title">
+	<link rel='stylesheet' type='text/css' href='./WebContent/lib/dhtmlxscheduler/dhtmlxscheduler_flat.css'>
+	<script type="text/javascript" src="./WebContent/lib/js-cookie.js"></script>
+	<script type="text/javascript" src="./WebContent/lib/js-moment.js"></script>
+	<script type="text/javascript" src="./WebContent/lib/js-timeZone.js"></script>
+<!-- 	<script type="text/javascript" src="./WebContent/lib/quagga/quagga_min.js"></script>
+	<script type="text/javascript" src="./WebContent/lib/zxing/zxing_0_15_2_min.js"></script> -->
+	<script src="./WebContent/lib/recordRTC/RecordRTC.js"></script>
+	<script src="./WebContent/lib/recordRTC/screenshot.js"></script>
+</head>
+
+<body class="sapUiBody" id="content" style="background: #002C63; margin: 0;">
+	<div id="welcome_airbus" style="height: 100vh; display: flex;">
+		<div style="margin: auto;">
+			<img src="./WebContent/images/Airbus-xl.png" style="display: block; width: 40vw; height: auto; margin: auto; transform: translateY(2vh);"/>
+			<img src="./WebContent/images/ajax_loader_metal_512.gif" style="display: block; width: auto; height: 8vh; margin: 0 auto; transform: translateY(12vh);"/>
+		</div>
+	</div>
+
+	<!-- sap.m, sap.ui.table, sap.ui.layout, sap.ui.vbm, sap.ui.unified, sap.ui.commons, sap.suite.ui.microchart, sap.viz -->
+	<!-- https://sapui5.netweaver.ondemand.com/1.40.18/resources/sap-ui-core.js" -->
+	<script>
+var oScript = document.createElement('script');
+if(window.location.search.search('ui5_14018=true') != -1){
+	oScript.setAttribute('src',"https://sapui5.hana.ondemand.com/1.40.18/resources/sap-ui-core.js");
+}else{
+	oScript.setAttribute('src',"https://sapui5.hana.ondemand.com/1.60.4/resources/sap-ui-core.js");
+}
+
+oScript.setAttribute('id',"sap-ui-bootstrap");
+oScript.setAttribute('data-sap-ui-language',"en");
+oScript.setAttribute('data-sap-ui-libs',"sap.m, sap.ui.table, sap.ui.layout, sap.ui.vbm, sap.ui.unified, sap.ui.commons, sap.suite.ui.microchart");
+oScript.setAttribute('data-sap-ui-theme',"sap_bluecrystal");
+oScript.setAttribute('data-sap-ui-preload',"async");
+oScript.setAttribute('data-sap-ui-bindingSyntax',"complex");
+oScript.setAttribute('data-sap-ui-async', "true");
+//oScript.setAttribute('data-sap-ui-compatVersion',"1.40.18");
+oScript.onload = function (script){
+	sap.ui.getCore().attachInit(function () {
+
+		var oModel = new sap.ui.model.json.JSONModel();
+		oModel.loadData("../MES-COMMON/package.json","",false);
+		oModel.getData().components.forEach( function(el) {
+			jQuery.sap.registerModulePath(el.viewPath , el.path);
+		});			
+		
+		//jQuery.sap.registerModulePath("airbus.mes.shell", "./WebContent/components/shell");
+
+		sap.ui.getCore().setModel(new sap.ui.model.resource.ResourceModel({
+			bundleName: "airbus.mes.shell.config.res_config",
+			bundleLocale: "dev"
+		}), "ResourceUrl");
+
+		//jQuery.sap.registerModulePath("airbus.mes.settings", "./WebContent/components/settings");
+		//jQuery.sap.registerModulePath("airbus.mes.homepage", "./WebContent/components/homepage");
+		jQuery.sap.registerModulePath("airbus.mes.dhtmlx", "./WebContent/lib/dhtmlxscheduler");
+		jQuery.sap.registerModulePath("airbus.mes.d3", "./WebContent/lib/d3");
+		jQuery.sap.registerModulePath("airbus.mes.PDFTron", "./WebContent/lib/PDFTron");
+
+		if (!window.location.hostname.includes('airbus') && window.location.search != "?url_config=local" && (sessionStorage.loginType ===
+				undefined || sessionStorage.loginType == "")) {
+			// Case of localhost connection, need to define login pass
+			//jQuery.sap.registerModulePath("airbus.mes.login", "./WebContent/components/login");
+
+			oCompCont = new sap.ui.core.ComponentContainer({
+				component: sap.ui.getCore().createComponent({
+					name: "airbus.mes.login", // root component folder is resources
+				})
+			});
+			oCompCont.placeAt("content");
+
+		} else {
+			// Case of airbus connection
+
+			// Create a Ui container
+			oCompCont = new sap.ui.core.ComponentContainer({
+				component: sap.ui.getCore().createComponent({
+					name: "airbus.mes.shell", // root component folder is resources
+					propagateModel: true,
+				})
+			});
+
+			airbus.mes.component = airbus.mes.component || {};
+
+			airbus.mes.component.settings = sap.ui.getCore().createComponent({
+				name: "airbus.mes.settings", // root component folder is resources
+			});
+			
+			// Load User and Application Settings
+			airbus.mes.settings.util.ModelManager.loadUserSettingsModel();
+
+			//logUserKPI
+			airbus.mes.settings.util.ModelManager.logUserKpiOnApplicationLaunch("LOAD_PAGE", "", airbus.mes.settings.util.ModelManager.user);
+
+			// Init logging
+			airbus.mes.shell.util.LoggingManager.init();
+
+			oComp1 = sap.ui.getCore().createComponent({
+				name: "airbus.mes.homepage", // root component folder is resources
+			});
+
+			nav = airbus.mes.shell.oView.byId("navCont");
+
+			nav.addPage(airbus.mes.homepage.oView);
+			airbus.mes.homepage.oView.placeAt(nav);
+
+			// place this Ui Container with the Component inside into UI Area
+			oCompCont.placeAt("content");
+			// remove splash color & style
+			document.body.style = {};
+
+			// Check user settings and if not defined then navigate to Settings screen
+			if(!airbus.mes.settings.util.ModelManager.checkDisplayFirstSetting()){
+				//if navigation to Settings didn't happen, navigate to last page
+				airbus.mes.shell.util.CookieManager.navToSavedPage(); 
+			}
+		}
+
+	});
+};
+
+document.head.appendChild(oScript);
+</script>
+</body>
+
+</html>
