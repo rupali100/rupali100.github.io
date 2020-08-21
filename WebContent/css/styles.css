@@ -28,7 +28,14 @@ body {
     font-weight: bold;
 }
 
-.launchButton{
+.launchButton1{
+	background-color: #caf1c3;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-right: 4rem;
+}
+
+.launchButton2{
 	background-color: #caf1c3;
     border-radius: 5px;
     border-color: transparent;
