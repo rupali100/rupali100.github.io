@@ -28,15 +28,20 @@ body {
     font-weight: bold;
 }
 
+.launchButton{
+	margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
 .launchButton1{
-	background-color: #caf1c3;
+	background-color: #b2f5a6;
     border-radius: 5px;
     border-color: transparent;
     margin-right: 4rem;
 }
 
 .launchButton2{
-	background-color: #caf1c3;
+	background-color: #b2f5a6;
     border-radius: 5px;
     border-color: transparent;
 }
