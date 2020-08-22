@@ -60,7 +60,7 @@ body {
 @media only screen and (max-width: 700px) {
   /* For mobile phones: */
   [class*="col-"] {
-    width: 700px;
+    width: 300px;
   }
 }
 .lastButton{
@@ -86,13 +86,16 @@ body {
 
 
 .lastButton:focus {
-  background-color: #66d253;
+  background-color: #66d253;  
+  border-color: transparent;
 }
 
-.launchButton1:focus {
-  background-color: #66d253;
+.launchButton1:focus { 
+  background-color: #66d253;  
+  border-color: transparent;
 }
 
 .launchButton2:focus {
-  background-color: #66d253;
+   background-color: #66d253;  
+  border-color: transparent;
 }
