@@ -25,13 +25,14 @@ body {
     padding: 0.25rem;
     border-bottom: 2px solid lightgrey;	
 }
-@media screen and (min-width: 1024px)
- .section{
+
+@media screen and (min-width: 1024px){
+ [class*="section"]{
     display: grid;
     grid-template-columns: 18% 82%;
     margin: 0.5rem 0;
 }
-
+}
 #headerId{
 	font-size: 1.5rem;
     font-weight: bold;
