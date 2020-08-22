@@ -10,7 +10,7 @@ body {
 .col-3_yearTile{
 	background-color: white;
     width: 14rem;
-    height: 25rem;
+    height: 28rem;
     border-radius: 10px;	
 }
 
@@ -40,17 +40,19 @@ body {
     margin-right: 3rem;
     margin-bottom: 0.5rem;
     &.clickable {
-    color: $cherry-red;
+    color: red;
     &:hover {
-      background-color: $cherry-red;
+      background-color: red;
       color: $powder-blue;
       border: 1px solid $powder-blue;
       border-radius: 4px;
+      cursor: pointer;
     }
 }
 }
 
 .launchButton2{
+	cursor: pointer;
 	background-color: #b2f5a6;
     border-radius: 5px;
     border-color: transparent;
@@ -63,3 +65,13 @@ body {
     width: 700px;
   }
 }
+
+.right{
+	 position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+	
+}
+
