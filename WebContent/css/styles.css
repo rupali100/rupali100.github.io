@@ -1,5 +1,5 @@
 body {
-  background-color: #e0e2e270;
+  background-color: #e0e0e0;
 }
 
 .main{
@@ -33,10 +33,7 @@ body {
     margin: 0.5rem 0;
 }
 }
-#headerId{
-	font-size: 1.5rem;
-    font-weight: bold;
-}
+
 
 .col-3_yearTile{
 	background-color: #ffffff;
@@ -54,11 +51,6 @@ body {
 	margin: auto;
 }
 
-#filterId{
-	padding-left: 1rem;
-	font-size: 1rem;
-    font-weight: bold;
-}
 
 .launchButtonYear{
 	margin-top: -0.5rem;
