@@ -34,6 +34,22 @@ body {
 }
 }
 
+@media screen and (min-width: 1024px){
+ [class*="spaceX"]{
+   display: grid;
+   grid-row-gap: 0.75rem;
+    grid-column-gap: 0.25rem;
+   grid-template-columns: repeat(4,1fr);
+}
+}
+
+@media screen and (min-width: 1024px){
+[class*="sapceXinner"] {
+    width: 95%;
+    max-height: 480px;
+    overflow: hidden;
+    }
+    }
 
 .col-3_yearTile{
 	background-color: #ffffff;
