@@ -74,16 +74,14 @@ body {
 }
 
 .right{
-	 position: absolute;
-  right: 65rem;
-  width: 220px;
+  position: absolute;
+  right: 67rem;
   padding: 10px;
 	
 }
 .left{
-	 position: absolute;
-  left: 3rem;
-  width: 170px;
+  position: absolute;
+  left: 8rem;
   padding: 10px;
 	
 }
