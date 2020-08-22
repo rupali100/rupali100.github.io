@@ -73,16 +73,4 @@ body {
   }
 }
 
-.right{
-  position: absolute;
-  right: 67rem;
-  padding: 10px;
-	
-}
-.left{
-  position: absolute;
-  left: 8rem;
-  padding: 10px;
-	
-}
 
