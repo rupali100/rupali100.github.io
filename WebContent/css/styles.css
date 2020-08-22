@@ -41,21 +41,12 @@ body {
 }
 
 .launchButton1{
+	cursor: pointer;
 	background-color: #b2f5a6;
     border-radius: 5px;
     border-color: transparent;
     margin-right: 3rem;
     margin-bottom: 0.5rem;
-    &.clickable {
-    color: red;
-    &:hover {
-      background-color: red;
-      color: $powder-blue;
-      border: 1px solid $powder-blue;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-}
 }
 
 .launchButton2{
@@ -71,6 +62,14 @@ body {
   [class*="col-"] {
     width: 700px;
   }
+}
+.lastButton{
+	margin-right: 6rem;
+	cursor: pointer;
+	background-color: #b2f5a6;
+    border-radius: 5px;
+    border-color: transparent;
+    margin-bottom: 0.5rem;
 }
 
 
