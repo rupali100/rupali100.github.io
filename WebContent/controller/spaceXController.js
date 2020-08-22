@@ -1,3 +1,5 @@
+
+"use strict";
 var xmlhttp = new XMLHttpRequest();
 var url = "https://api.spacexdata.com/v3/launches?";
 
