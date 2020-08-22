@@ -28,9 +28,16 @@ body {
     font-weight: bold;
 }
 
+.launchButtonYear{
+	margin-top: -0.5rem;
+    margin-bottom: 15rem;
+}
+
 .launchButton{
+	
 	margin-top: -0.5rem;
     margin-bottom: 1rem;
+	
 }
 
 .launchButton1{
@@ -69,16 +76,14 @@ body {
 .right{
 	 position: absolute;
   right: 65rem;
-  width: 300px;
-  border: 3px solid #73AD21;
+  width: 220px;
   padding: 10px;
 	
 }
 .left{
 	 position: absolute;
   left: 3rem;
-  width: 300px;
-  border: 3px solid #73AD21;
+  width: 170px;
   padding: 10px;
 	
 }
