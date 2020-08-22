@@ -2,16 +2,47 @@ body {
   background-color: #e0e2e270;
 }
 
+.main{
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainDiv{
+	width: 95%;
+    max-width: 1440px;
+    min-width: 200px;
+    margin: auto;
+    padding: .5rem 0;
+    overflow: hidden;	
+}
+.intDiv{
+	width: 85%;
+    max-width: 150px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    border-bottom: 2px solid lightgrey;	
+}
+@media screen and (min-width: 1024px)
+.launch-programs.jsx-837661249 {
+    display: grid;
+    grid-template-columns: 18% 82%;
+    margin: 0.5rem 0;
+}
+
 #headerId{
 	font-size: 1.5rem;
     font-weight: bold;
 }
 
 .col-3_yearTile{
-	background-color: white;
-    width: 14rem;
-    height: 28rem;
-    border-radius: 10px;	
+	background-color: #ffffff;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    height: auto;
+    max-height: 660px;	
 }
 
 .filterLable{
@@ -33,10 +64,19 @@ body {
     margin-bottom: 15rem;
 }
 
+.span1{
+	margin-bottom: 1.5rem;
+    cursor: pointer;
+}
 .launchButton{
-	
-	margin-top: -0.5rem;
-    margin-bottom: 1rem;
+	width: 90%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    max-width: 180px;
 	
 }
 
