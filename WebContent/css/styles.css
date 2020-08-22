@@ -72,4 +72,15 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.lastButton:hover {
+  background-color: #66d253;
+}
+
+.launchButton1:hover {
+  background-color: #66d253;
+}
+
+.launchButton2:hover {
+  background-color: #66d253;
+}
 
