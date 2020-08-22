@@ -84,3 +84,15 @@ body {
   background-color: #66d253;
 }
 
+
+.lastButton:focus {
+  background-color: #66d253;
+}
+
+.launchButton1:focus {
+  background-color: #66d253;
+}
+
+.launchButton2:focus {
+  background-color: #66d253;
+}
