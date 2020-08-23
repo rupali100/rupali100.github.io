@@ -49,6 +49,14 @@ body {
 }
 }
 
+@media screen and (max-width: 1024px) and (min-width: 700px){
+[class*="section"] {
+    display: grid;
+    grid-template-columns: 27% 70%;
+    margin: 0.5rem 0;
+}
+}
+
 @media screen and (min-width: 1024px){
 [class*="spaceXinner"] {
     width: 95%;
