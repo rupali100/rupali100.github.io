@@ -10,7 +10,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-function loadSpaceXData(arr) {
+function loadSpaceXData(arr,flag) {
 	let arrLength = arr.length;
 	let i=0;
 	let aSpaceX = [];
@@ -24,7 +24,7 @@ function loadSpaceXData(arr) {
 						succ_launch:  arr[i].launch_success,
 						succ_landing: arr[i].rocket.first_stage.cores[0].succ_landing,
 					}
-					aSpaceX.push(oSpaceX);
+					aSpaceX.push(oSpaceX,flag);
 	}
 	
 	filterSpaceXData(aSpaceX);
@@ -32,11 +32,11 @@ function loadSpaceXData(arr) {
 
 
 function filterSpaceXData(aSpaceX,filterFlag){
-	if(document.getElementsByClassName("cellMain").length){
+	if(filterFlag){
 		let j =0;
-		let length = document.getElementsByClassName("cellMain").length
+		let length = document.getElementsByClassName("spaceX")[0].childNodes.length
 		for(j=0;j<=length-1; j++){
-			document.getElementsByClassName("cellMain").item("div").remove()
+			document.getElementsByClassName("spaceX")[0].childNodes[j].remove
 		}
 	}
 	let i=0;
