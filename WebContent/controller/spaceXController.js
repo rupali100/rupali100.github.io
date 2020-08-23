@@ -49,11 +49,35 @@ function loadSpaceXData(arr) {
 	element.childNodes[2].childNodes[0].appendChild(document.createElement("strong"));
 	element.childNodes[2].childNodes[0].childNodes[0].innerText = "Mission Ids:"
 	element.childNodes[2].appendChild(document.createElement("span"));
-	element.childNodes[2].childNodes[1].innerText="cfea"
+	element.childNodes[2].childNodes[1].innerText=aSpaceX[i].mission_id;
 	
 	element.appendChild(document.createElement("div"))
+	element.childNodes[3].setAttribute("class","cellId")
+	element.childNodes[3].appendChild(document.createElement("span"));
+	element.childNodes[3].childNodes[0].setAttribute("class","spanCell");
+	element.childNodes[3].childNodes[0].appendChild(document.createElement("strong"));
+	element.childNodes[3].childNodes[0].childNodes[0].innerText = "Launch Year:"
+	element.childNodes[3].appendChild(document.createElement("span"));
+	element.childNodes[3].childNodes[1].innerText=aSpaceX[i].launch_year;
+		
 	element.appendChild(document.createElement("div"))
+	element.childNodes[4].setAttribute("class","cellId")
+	element.childNodes[4].appendChild(document.createElement("span"));
+	element.childNodes[4].childNodes[0].setAttribute("class","spanCell");
+	element.childNodes[4].childNodes[0].appendChild(document.createElement("strong"));
+	element.childNodes[4].childNodes[0].childNodes[0].innerText = "Successful Launch:"
+	element.childNodes[4].appendChild(document.createElement("span"));
+	element.childNodes[4].childNodes[1].innerText=aSpaceX[i].launch_success;
+		
 	element.appendChild(document.createElement("div"))
+	element.childNodes[5].setAttribute("class","cellId")
+	element.childNodes[5].appendChild(document.createElement("span"));
+	element.childNodes[5].childNodes[0].setAttribute("class","spanCell");
+	element.childNodes[5].childNodes[0].appendChild(document.createElement("strong"));
+	element.childNodes[5].childNodes[0].childNodes[0].innerText = "Successful Landing:"
+	element.childNodes[5].appendChild(document.createElement("span"));
+	element.childNodes[5].childNodes[1].innerText=aSpaceX[i].rocket.first_stage.cores[0].landing_intent;
+		
 	document.getElementsByClassName("spaceX")[0].append(element)
 	}
 }
