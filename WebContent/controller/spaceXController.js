@@ -67,7 +67,7 @@ function loadSpaceXData(arr) {
 	element.childNodes[4].childNodes[0].appendChild(document.createElement("strong"));
 	element.childNodes[4].childNodes[0].childNodes[0].innerText = "Successful Launch:"
 	element.childNodes[4].appendChild(document.createElement("span"));
-	element.childNodes[4].childNodes[1].innerText=aSpaceX[i].launch_success;
+	element.childNodes[4].childNodes[1].innerText=aSpaceX[i].succ_launch;
 		
 	element.appendChild(document.createElement("div"))
 	element.childNodes[5].setAttribute("class","cellId")
@@ -76,7 +76,7 @@ function loadSpaceXData(arr) {
 	element.childNodes[5].childNodes[0].appendChild(document.createElement("strong"));
 	element.childNodes[5].childNodes[0].childNodes[0].innerText = "Successful Landing:"
 	element.childNodes[5].appendChild(document.createElement("span"));
-	element.childNodes[5].childNodes[1].innerText=aSpaceX[i].rocket.first_stage.cores[0].landing_intent;
+	element.childNodes[5].childNodes[1].innerText=aSpaceX[i].succ_landing;
 		
 	document.getElementsByClassName("spaceX")[0].append(element)
 	}
