@@ -155,7 +155,7 @@ body {
 }
 
 .cell{
-	    width: 100%;
+ width: 100%;
     height: auto;
     margin: auto;
     margin-bottom: 0.5rem;
@@ -171,4 +171,19 @@ body {
 .cellId{
 	margin-bottom: 0.5rem;
 	
+}
+.cellMain{
+	height: auto;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 1rem;
+	
+}
+
+@media screen and (min-width: 1024px){
+[class="cellMain"] {
+    width: 95%;
+    max-height: 480px;
+    overflow: hidden;
+}
 }

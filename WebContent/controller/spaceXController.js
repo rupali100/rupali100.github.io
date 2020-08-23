@@ -29,6 +29,7 @@ function loadSpaceXData(arr) {
 	i=0;
 	for(i; i<=aSpaceX.length-1; i++){
 	let element = document.createElement("div")
+	element.setAttribute("class","cellMain")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
     element.childNodes[0].appendChild(document.createElement("img"));
