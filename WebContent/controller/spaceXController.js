@@ -26,7 +26,8 @@ function loadSpaceXData(arr) {
 					}
 					aSpaceX.push(oSpaceX);
 	}
-	
+	let i=0;
+	for(i; i<=aSpaceX.length-1; i++){
 	let element = document.createElement("div")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
@@ -54,4 +55,5 @@ function loadSpaceXData(arr) {
 	a.appendChild(document.createElement("div"))
 	a.appendChild(document.createElement("div"))
 	document.body.getElementsByClassName("spaceX")
+	}
 }
