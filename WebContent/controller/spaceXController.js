@@ -24,19 +24,19 @@ function loadSpaceXData(arr,flag) {
 						succ_launch:  arr[i].launch_success,
 						succ_landing: arr[i].rocket.first_stage.cores[0].succ_landing,
 					}
-					aSpaceX.push(oSpaceX,flag);
+					aSpaceX.push(oSpaceX);
 	}
 	
-	filterSpaceXData(aSpaceX);
+	filterSpaceXData(aSpaceX,flag);
 	}
 
 
 function filterSpaceXData(aSpaceX,filterFlag){
-	if(filterFlag){
+	if(document.getElementsByClassName("cellMain").length){
 		let j =0;
-		let length = document.getElementsByClassName("spaceX")[0].childNodes.length
+		let length = document.getElementsByClassName("cellMain").length
 		for(j=0;j<=length-1; j++){
-			document.getElementsByClassName("spaceX")[0].childNodes[j].remove
+			document.getElementsByClassName("cellMain").item("div").remove()
 		}
 	}
 	let i=0;
