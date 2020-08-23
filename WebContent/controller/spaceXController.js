@@ -31,7 +31,7 @@ function loadSpaceXData(arr) {
 	let element = document.createElement("div")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
-element.childNodes[0].appendChild(document.createElzement("img"));
+    element.childNodes[0].appendChild(document.createElement("img"));
 	element.childNodes[0].childNodes[0].setAttribute("src",aSpaceX[i].space_image);
 	element.childNodes[0].childNodes[0].setAttribute("alt","image");
 	element.childNodes[0].childNodes[0].setAttribute("class","abc");
