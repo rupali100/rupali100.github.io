@@ -66,9 +66,9 @@ function onClickLand(){
 	this.prevLand= event.target.innerText; 
 	let filterVal = event.target.innerText; 	
 	var xmlhttp = new XMLHttpRequest();
-	if(this.prevYear && this.prevLand ){
+	if(this.prevYear && this.prevLaunch ){
 		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+this.prevLaunch.toLowerCase()+"&land_success="+filterVal.toLowerCase();
-	}else if(this.prevLaunch || this.prevLand){
+	}else if(this.prevLaunch || this.prevYear){
 		if(this.prevYear){
 			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+filterVal.toLowerCase();
 			
