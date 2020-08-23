@@ -26,7 +26,7 @@ function loadSpaceXData(arr) {
 					}
 					aSpaceX.push(oSpaceX);
 	}
-	let i=0;
+	i=0;
 	for(i; i<=aSpaceX.length-1; i++){
 	let element = document.createElement("div")
 	element.appendChild(document.createElement("div"));
