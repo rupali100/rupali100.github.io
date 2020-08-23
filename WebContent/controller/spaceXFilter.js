@@ -6,7 +6,7 @@ function onClickYear(data){
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 	     spaceXdata = JSON.parse(this.responseText);
-	    loadSpaceXData(spaceXdata);
+	    loadSpaceXData(spaceXdata,"true");
 	  }
 	};
 	xmlhttp.open("GET", url, true);
@@ -21,7 +21,7 @@ function onClickLaunch(){
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 	     spaceXdata = JSON.parse(this.responseText);
-	    loadSpaceXData(spaceXdata);
+	    loadSpaceXData(spaceXdata,"true");
 	  }
 	};
 	xmlhttp.open("GET", url, true);
@@ -37,7 +37,7 @@ function onClickLand(){
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
 	     spaceXdata = JSON.parse(this.responseText);
-	    loadSpaceXData(spaceXdata);
+	    loadSpaceXData(spaceXdata,"true");
 	  }
 	};
 	xmlhttp.open("GET", url, true);

@@ -22,7 +22,7 @@ function loadSpaceXData(arr) {
 						mission_id:  arr[i].mission_id,
 						launch_year:  arr[i].launch_year,
 						succ_launch:  arr[i].launch_success,
-						succ_landing: arr[i].rocket.first_stage.cores[0].landing_intent,
+						succ_landing: arr[i].rocket.first_stage.cores[0].succ_landing,
 					}
 					aSpaceX.push(oSpaceX);
 	}
@@ -31,7 +31,7 @@ function loadSpaceXData(arr) {
 	}
 
 
-function filterSpaceXData(aSpaceX){
+function filterSpaceXData(aSpaceX,filterFlag){
 	if(document.getElementsByClassName("cellMain").length){
 		let j =0;
 		let length = document.getElementsByClassName("cellMain").length
