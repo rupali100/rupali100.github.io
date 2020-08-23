@@ -31,9 +31,24 @@ function onClickYear(data){
 
 function onClickLaunch(){
 	this.prevLaunch= event.target.innerText; 
-	let filterVal = event.target.innerText; 	
+	let filterVal = event.target.innerText;
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal ;
+	if(this.prevYear && this.prevLand ){
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+this.prevLand+"&launch_success="+filterVal;
+	}else if(this.prevLaunch || this.prevLand){
+		if(this.prevYear){
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+filterVal;
+			
+		}else{
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand+"&launch_success="+filterVal;
+				
+		}
+		
+	}	
+	else{
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal ;
+	}
+	
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
@@ -50,7 +65,21 @@ function onClickLand(){
 	this.prevLand= event.target.innerText; 
 	let filterVal = event.target.innerText; 	
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal ;
+	if(this.prevYear && this.prevLand ){
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+this.prevLaunch+"&land_success="+filterVal;
+	}else if(this.prevLaunch || this.prevLand){
+		if(this.prevYear){
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+filterVal;
+			
+		}else{
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLaunch+"&land_success="+filterVal;
+				
+		}
+		
+	}	
+	else{
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal ;
+	}
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
