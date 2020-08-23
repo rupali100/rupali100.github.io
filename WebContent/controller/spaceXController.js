@@ -27,7 +27,7 @@ function loadSpaceXData(arr) {
 					aSpaceX.push(oSpaceX);
 	}
 	
-	let element = document.createElement("div")l
+	let element = document.createElement("div")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
 	element.childNodes[0].appendChild(document.createElement("img"));
