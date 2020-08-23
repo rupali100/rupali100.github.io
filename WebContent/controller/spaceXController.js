@@ -89,8 +89,4 @@ function filterSpaceXData(aSpaceX){
 	}
 }
 
-function onClickYear(data){
-	
-	
-}
 
