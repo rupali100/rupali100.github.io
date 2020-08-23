@@ -30,6 +30,7 @@ function onClickYear(data){
 };
 
 function onClickLaunch(){
+	this.prevLaunch= event.target.innerText; 
 	let filterVal = event.target.innerText; 	
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal ;
@@ -46,6 +47,7 @@ function onClickLaunch(){
 };
 
 function onClickLand(){
+	this.prevLand= event.target.innerText; 
 	let filterVal = event.target.innerText; 	
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal ;
