@@ -31,29 +31,29 @@ function loadSpaceXData(arr) {
 	let element = document.createElement("div")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
-	element.childNodes[0].appendChild(document.createElement("img"));
+element.childNodes[0].appendChild(document.createElzement("img"));
 	element.childNodes[0].childNodes[0].setAttribute("src",aSpaceX[i].space_image);
 	element.childNodes[0].childNodes[0].setAttribute("alt","image");
 	element.childNodes[0].childNodes[0].setAttribute("class","abc");
 	
 	element.appendChild(document.createElement("div"))
-	element.childNodes[1].setAttribute("class","cell")
+	element.childNodes[1].setAttribute("class","name")
 	element.childNodes[1].appendChild(document.createElement("strong"));
 	element.childNodes[1].childNodes[0].innerText = aSpaceX[i].mission_name;
 		
 	element.appendChild(document.createElement("div"))
-	element.childNodes[2].setAttribute("class","cell")
+	element.childNodes[2].setAttribute("class","cellId")
 	element.childNodes[2].appendChild(document.createElement("span"));
-	element.childNodes[2].childNodes[0].setAttribute("class","cell");
+	element.childNodes[2].childNodes[0].setAttribute("class","spanCell");
 	element.childNodes[2].childNodes[0].appendChild(document.createElement("strong"));
 	element.childNodes[2].childNodes[0].childNodes[0].innerText = "Mission Ids:"
 	element.childNodes[2].childNodes[0].childNodes[0].setAttribute("class","cell")
 	element.childNodes[2].appendChild(document.createElement("span"));
 	element.childNodes[2].childNodes[1].innerText="cfea"
 	
-	a.appendChild(document.createElement("div"))
-	a.appendChild(document.createElement("div"))
-	a.appendChild(document.createElement("div"))
-	document.body.getElementsByClassName("spaceX")
+	element.appendChild(document.createElement("div"))
+	element.appendChild(document.createElement("div"))
+	element.appendChild(document.createElement("div"))
+	document.getElementsByClassName("spaceX")[0].append(element)
 	}
 }

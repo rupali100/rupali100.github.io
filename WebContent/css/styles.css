@@ -153,3 +153,22 @@ body {
    background-color: #66d253;  
   border-color: transparent;
 }
+
+.cell{
+	    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    background-color: #E0E0E0;	
+}
+
+.name{
+	color: #551A8B;
+    margin-bottom: 0.75rem;
+	
+}
+
+.cellId{
+	margin-bottom: 0.5rem;
+	
+}
