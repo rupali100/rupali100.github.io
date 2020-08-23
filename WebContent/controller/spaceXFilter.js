@@ -3,13 +3,13 @@ function onClickYear(data){
 	let filterVal = event.target.innerText; 
 	var xmlhttp = new XMLHttpRequest();
 	if(this.prevLaunch && this.prevLand ){
-		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch+"&land_success="+this.prevLand+"&launch_year="+filterVal;
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch.toLowerCase()+"&land_success="+this.prevLand.toLowerCase()+"&launch_year="+filterVal;
 	}else if(this.prevLaunch || this.prevLand){
 		if(this.prevLaunch){
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch+"&launch_year="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch.toLowerCase()+"&launch_year="+filterVal;
 			
 		}else{
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand+"&launch_year="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand.toLowerCase()+"&launch_year="+filterVal;
 				
 		}
 		
@@ -34,19 +34,19 @@ function onClickLaunch(){
 	let filterVal = event.target.innerText;
 	var xmlhttp = new XMLHttpRequest();
 	if(this.prevYear && this.prevLand ){
-		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+this.prevLand+"&launch_success="+filterVal;
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+this.prevLand+"&launch_success="+filterVal.toLowerCase();
 	}else if(this.prevLaunch || this.prevLand){
 		if(this.prevYear){
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+filterVal.toLowerCase();
 			
 		}else{
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand+"&launch_success="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand.toLowerCase()+"&launch_success="+filterVal.toLowerCase();
 				
 		}
 		
 	}	
 	else{
-		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal ;
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal.toLowerCase() ;
 	}
 	
 	let spaceXdata;
@@ -66,19 +66,19 @@ function onClickLand(){
 	let filterVal = event.target.innerText; 	
 	var xmlhttp = new XMLHttpRequest();
 	if(this.prevYear && this.prevLand ){
-		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+this.prevLaunch+"&land_success="+filterVal;
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&launch_success="+this.prevLaunch.toLowerCase()+"&land_success="+filterVal.toLowerCase();
 	}else if(this.prevLaunch || this.prevLand){
 		if(this.prevYear){
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+this.prevYear+"&land_success="+filterVal.toLowerCase();
 			
 		}else{
-			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLaunch+"&land_success="+filterVal;
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLaunch.toLowerCase()+"&land_success="+filterVal.toLowerCase();
 				
 		}
 		
 	}	
 	else{
-		var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal ;
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal.toLowerCase() ;
 	}
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
