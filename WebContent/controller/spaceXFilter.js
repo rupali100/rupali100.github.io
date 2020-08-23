@@ -1,7 +1,23 @@
 function onClickYear(data){
-	let filterVal = event.target.innerText; 	
+	this.prevYear = event.target.innerText;
+	let filterVal = event.target.innerText; 
 	var xmlhttp = new XMLHttpRequest();
-	var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+filterVal ;
+	if(this.prevLaunch && this.prevLand ){
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch+"&land_success="+this.prevLand+"&launch_year="+filterVal;
+	}else if(this.prevLaunch || this.prevLand){
+		if(this.prevLaunch){
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+this.prevLaunch+"&launch_year="+filterVal;
+			
+		}else{
+			var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+this.prevLand+"&launch_year="+filterVal;
+				
+		}
+		
+	}	
+	else{
+		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+filterVal ;
+	}
+	
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
