@@ -17,6 +17,7 @@ function onClickYear(data){
 	else{
 		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+filterVal ;
 	}
+	document.location.search=url.split("?")[1]
 	
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
@@ -48,7 +49,7 @@ function onClickLaunch(){
 	else{
 		var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_success="+filterVal.toLowerCase() ;
 	}
-	
+	document.location.search=url.split("?")[1]
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
@@ -80,6 +81,8 @@ function onClickLand(){
 	else{
 		var url = "https://api.spaceXdata.com/v3/launches?limit=100&land_success="+filterVal.toLowerCase() ;
 	}
+	
+	document.location.search=url.split("?")[1]
 	let spaceXdata;
 	xmlhttp.onreadystatechange = function() {
 	  if (this.readyState == 4 && this.status == 200) {
