@@ -32,7 +32,12 @@ function loadSpaceXData(arr) {
 
 
 function filterSpaceXData(aSpaceX){
-
+	if(document.getElementsByClassName("cellMain").length){
+		let j =0
+		for(j=0;j<=document.getElementsByClassName("cellMain").length; j++){
+			document.getElementsByClassName("cellMain").item("").remove()
+		}
+	}
 	let i=0;
 	for(i; i<=aSpaceX.length-1; i++){
 	let element = document.createElement("div")

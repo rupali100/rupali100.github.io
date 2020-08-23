@@ -1,6 +1,5 @@
 function onClickYear(data){
 	let filterVal = event.target.innerText;
-	return "dd";
 	var xmlhttp = new XMLHttpRequest();
 	var url = "https://api.spaceXdata.com/v3/launches?limit=100&launch_year="+filterVal ;
 	let spaceXdata;
