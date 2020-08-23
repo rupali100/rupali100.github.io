@@ -17,7 +17,7 @@ function loadSpaceXData(arr) {
 	for(i; i<=arrLength-1; i++){
 
 	let oSpaceX = {
-						space_image: arr[0].links.mission_patch_small,
+						space_image: arr[i].links.mission_patch_small,
 						mission_name: arr[i].mission_name,
 						mission_id:  arr[i].mission_id,
 						launch_year:  arr[i].launch_year,
@@ -48,7 +48,6 @@ function loadSpaceXData(arr) {
 	element.childNodes[2].childNodes[0].setAttribute("class","spanCell");
 	element.childNodes[2].childNodes[0].appendChild(document.createElement("strong"));
 	element.childNodes[2].childNodes[0].childNodes[0].innerText = "Mission Ids:"
-	element.childNodes[2].childNodes[0].childNodes[0].setAttribute("class","cell")
 	element.childNodes[2].appendChild(document.createElement("span"));
 	element.childNodes[2].childNodes[1].innerText="cfea"
 	
