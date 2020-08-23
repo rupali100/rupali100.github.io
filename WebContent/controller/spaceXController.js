@@ -35,7 +35,7 @@ function filterSpaceXData(aSpaceX){
 
 	let i=0;
 	for(i; i<=aSpaceX.length-1; i++){
-	let element = document.createElement("div")``~
+	let element = document.createElement("div")
 	element.setAttribute("class","cellMain")
 	element.appendChild(document.createElement("div"));
 	element.childNodes[0].setAttribute("class","cell")
