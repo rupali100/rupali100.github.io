@@ -26,7 +26,14 @@ function loadSpaceXData(arr) {
 					}
 					aSpaceX.push(oSpaceX);
 	}
-	i=0;
+	
+	filterSpaceXData(aSpaceX);
+	}
+
+
+function filterSpaceXData(aSpaceXInfo){
+
+	let i=0;
 	for(i; i<=aSpaceX.length-1; i++){
 	let element = document.createElement("div")
 	element.setAttribute("class","cellMain")
