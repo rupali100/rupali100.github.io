@@ -33,9 +33,10 @@ function loadSpaceXData(arr) {
 
 function filterSpaceXData(aSpaceX){
 	if(document.getElementsByClassName("cellMain").length){
-		let j =0
-		for(j=0;j<=document.getElementsByClassName("cellMain").length; j++){
-			document.getElementsByClassName("cellMain").item("").remove()
+		let j =0;
+		let length = document.getElementsByClassName("cellMain").length
+		for(j=0;j<=length-1; j++){
+			document.getElementsByClassName("cellMain").item("div").remove()
 		}
 	}
 	let i=0;
